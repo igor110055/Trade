@@ -58,7 +58,7 @@ def getLowerHighs(data: np.array, order=5, K=2):
     return extrema
 
 
-def getHigherHighs(data: np.array, order=5, K=2):
+def getHigherHighs(data: np.array, order=10, K=4):
     '''
     Finds consecutive higher highs in price pattern.
     Must not be exceeded within the number of periods indicated by the width
@@ -66,7 +66,7 @@ def getHigherHighs(data: np.array, order=5, K=2):
     K determines how many consecutive highs need to be higher.
     '''
     # Get highs
-    high_idx = argrelextrema(data, np.greater, order=5)[0]
+    high_idx = argrelextrema(data, np.greater, order=order)[0]
     highs = data[high_idx]
     # Ensure consecutive highs are higher than previous highs
     extrema = []

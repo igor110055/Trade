@@ -67,7 +67,7 @@ def getLowerHighs(data: np.array, order=5, K=2):
     return extrema
 
 
-def getHigherHighs(data: np.array, order=5, K=2):
+def getHigherHighs(data: np.array, order=10, K=4):
     '''
     Finds consecutive higher highs in price pattern.
     Must not be exceeded within the number of periods indicated by the width

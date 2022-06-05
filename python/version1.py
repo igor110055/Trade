@@ -164,7 +164,7 @@ priceDF = pd.DataFrame(price_dict, index=["price"]).T
 priceDF['price'] = priceDF['price'].astype(float)
 
 # convert dates to datetime from object
-priceDF.index = pd.to_datetime(priceDF.index)
+priceDF.index = pd.to_datetime(priceDF.index.tolist())
 
 # reverse dates
 priceDF = priceDF.iloc[::-1]
@@ -198,7 +198,7 @@ from datetime import timedelta
 close = data['price'].values
 dates = data.index
 
-order = 3
+order = 5
 K = 2
 
 hh = getHigherHighs(close, order, K)
